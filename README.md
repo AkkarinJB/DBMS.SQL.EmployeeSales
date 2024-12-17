@@ -1,2 +1,2 @@
 ##Capture## 
-![หน้าจอหลัก](./images/screenshot.png)
+![หน้าจอหลัก](mployeeSalesApp/images/index.png)
