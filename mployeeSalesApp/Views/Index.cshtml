@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EmployeeSales>
+
+<h2>Employee Sales</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>รหัสพนักงาน</th>
+            <th>ชื่อเต็มพนักงาน</th>
+            <th>ตำแหน่ง</th>
+            <th>จำนวนใบสั่งซื้อ</th>
+            <th>ยอดเงินรวม</th>
+            <th>ดูใบสั่งซื้อ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeID</td>
+                <td>@employee.FullName</td>
+                <td>@employee.Title</td>
+                <td>@employee.TotalOrders</td>
+                <td>@employee.TotalSales</td>
+                <td>
+                    <!-- ลิงก์ไปยัง OrderList โดยส่ง EmployeeID ไปด้วย -->
+                    <a href="@Url.Action("OrderList", "Employee", new { employeeID = employee.EmployeeID })">ดูใบสั่งซื้อ</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
